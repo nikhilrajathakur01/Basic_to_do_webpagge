@@ -1,0 +1,125 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --primary-color: #4CAF50;
+  --task-bg: #f2f2f2;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #90CAF9;
+  --task-bg: #1e1e1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  background: var(--task-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#toggle-theme {
+  float: right;
+  margin-bottom: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-color);
+}
+
+input::placeholder {
+  color: #888;
+}
+
+button#add-task {
+  padding: 10px 16px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button#add-task:hover {
+  background-color: #388e3c;
+}
+
+ul#task-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+ul#task-list li {
+  background: var(--bg-color);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 5px solid var(--primary-color);
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul#task-list li button {
+  background: red;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
